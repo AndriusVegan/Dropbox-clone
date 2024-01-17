@@ -17,7 +17,7 @@ import toast from "react-hot-toast";
 
 function Dropzone() {
   const [loading, setLoading] = useState(false);
-  const { isLoaded, isSignedIn, user } = useUser;
+  const { isLoaded, isSignedIn, user } = useUser();
 
   const onDrop = (acceptedFiles: File[]) => {
     acceptedFiles.forEach((file) => {
@@ -60,9 +60,9 @@ function Dropzone() {
       });
     });
 
-    toast.success("Uploaded Successfully", {
-      id: toastId,
-    });
+    // toast.success("Uploaded Successfully", {
+    //   id: toastId,
+    // });
     setLoading(false);
   };
 
