@@ -36,6 +36,7 @@ function Dropzone() {
     if (loading) return;
     if (!user) return;
     setLoading(true);
+    const toastId = toast.loading("Uploading...");
 
     //  addDoc to this location in firestore - users/user123/files
 
@@ -60,9 +61,9 @@ function Dropzone() {
       });
     });
 
-    // toast.success("Uploaded Successfully", {
-    //   id: toastId,
-    // });
+    toast.success("Uploaded Successfully", {
+      id: toastId,
+    });
     setLoading(false);
   };
 

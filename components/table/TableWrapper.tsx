@@ -11,7 +11,7 @@ import { collection, orderBy, query } from "firebase/firestore";
 import { db } from "@/firebase";
 import { Skeleton } from "@/components/ui/skeleton";
 
-function TableWrapper({ skeletonFiles }: { skeletonsFiles: FileType[] }) {
+function TableWrapper({ skeletonFiles }: { skeletonFiles: FileType[] }) {
   const { user } = useUser();
   const [initialFiles, setInitialFiles] = useState<FileType[]>([]);
   const [sort, setSort] = useState<"asc" | "desc">("desc");
