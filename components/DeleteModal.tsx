@@ -18,8 +18,6 @@ import toast from "react-hot-toast";
 export function DeleteModal() {
   const { user } = useUser();
 
-  const toastId = toast.loading("Deleting...");
-
   const [isDeleteModalOpen, setIsDeleteModalOpen, fileId, setFileId] =
     useAppStore((state) => [
       state.isDeleteModalOpen,
@@ -29,7 +27,7 @@ export function DeleteModal() {
     ]);
   async function deleteFile() {
     if (!user || !fileId) return;
-    // const toastId = toast.loading("Deleting...");
+    const toastId = toast.loading("Deleting...");
     // the code below is a file reference, referencing firebase storage bucket
     const fileRef = ref(storage, `users/${user.id}/files/${fileId}`);
 
