@@ -86,6 +86,7 @@ function Dropzone() {
       }) => {
         const isFileTooLarge =
           fileRejections.length > 0 && fileRejections[0].file.size > maxSize;
+          
         return (
           <section className="m-4">
             <div

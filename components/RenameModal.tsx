@@ -1,6 +1,8 @@
+"use client";
+
 import { useAppStore } from "@/store/store";
 import { useUser } from "@clerk/nextjs";
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   Dialog,
   DialogContent,
@@ -27,8 +29,9 @@ function RenameModal() {
 
   const renameFile = async () => {
     if (!user || !fileId) return;
-    const toastId = toast.loading("Renaming ...")
-    await updateDoc(doc(db, "user", user.id, "files", fileId), {
+    const toastId = toast.loading("Renaming ...");
+
+    await updateDoc(doc(db, "users", user.id, "files", fileId), {
       filename: input,
     });
 
